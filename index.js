@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require('mongoose');
 const bcrypt = require("bcrypt");
@@ -7,6 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB (replace 'mongodb://localhost/yourdb' with your MongoDB connection string)
+const url = "mongodb+srv://milanjakhaniya:bdSsEEISS2ocDurU@cluster0.253vfsu.mongodb.net/demo?retryWrites=true&w=majority";
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const User = mongoose.model("user", {
